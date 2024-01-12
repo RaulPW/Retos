@@ -8,7 +8,7 @@
  */"""
 
 
-
+#Solucion 1
 diccionario = {
     
         'a': '4', 'b': '8', 'c': '(', 'd': 'd', 'e': '3', 'f': 'f', 'g': '9',
@@ -41,7 +41,7 @@ for i in range (len(texto)):
 
 print("Otro modo de solucionarlo", texto_hacker)"""
 
-
+#Solucion 2
 def traductor(texto):
     dict_1 = {
         "a": "4",
