@@ -17,43 +17,40 @@
  * - Consulta las reglas del juego si tienes dudas sobre el sistema de puntos.   
  */"""
 
+points = ['P1', 'P1', 'P1', 'P2', 'P2', 'P2', "P1", 'P2', 'P1', 'P1']
+mark = ["Love", 15, 30, 40]
+
+P1 = 0
+P2 = 0
 
 
-
-
-def partido(secuencia):
-    puntos_actual_p1 = "Love"
-    puntos_actual_p2 = "Love"
-    puntuaciones = ["Love", 15, 30, 40, 'Ventaja']
-    for player in secuencia:
-        if player == "P1":
-            for i in range(len(puntuaciones)):
-                if puntos_actual_p1 == "Ventaja" and puntos_actual_p2 == 40:
-                    puntos_actual_p1 = "win"
-                elif puntos_actual_p1 == puntuaciones[i]:
-                    puntos_actual_p1 = puntuaciones[i+1]
-                    break
-        if player == "P2":
-            for i in range(len(puntuaciones)):
-                if puntos_actual_p2 == "Ventaja" and puntos_actual_p1 == 40:
-                    puntos_actual_p2 = "win"
-                elif puntos_actual_p2 == puntuaciones[i]:
-                    puntos_actual_p2 = puntuaciones[i+1]
-                    break
-    if puntos_actual_p1 == "win":
-        print("Ha ganado el P1")
-    elif puntos_actual_p2 == "win":
-        print("Ha ganado el P2")
-    elif puntos_actual_p1 == 40 and puntos_actual_p2 == 40:
+for point in points:
+    if point == "P1":
+        P1 += 1
+    elif point == "P2":
+        P2 += 1
+    if P1 > 3 or P2 > 3:
+        if P1 == P2:
+            print("Deuce")
+        elif P1 - P2 == 2:
+            print("Gana P1")
+        elif P2 - P1 == 2:
+            print("Gana P2")
+        elif P1 - P2 == 1:
+            print("Ventaja P1")
+        elif P2 - P1 == 1:
+            print("Ventaja P2")
+    elif P1 == 3 and P2 == 3:
         print("Deuce")
+
     else:
-        print(f"{puntos_actual_p1} - {puntos_actual_p2}")
+        print(f"{mark[P1]} - {mark[P2]}")
 
-if __name__ == "__main__":
-    secuencia_puntos1 = ['P1', 'P1', 'P2', 'P2', 'P1', 'P2', 'P1', 'P1']
-    secuencia_puntos2 = ['P1', 'P1', 'P2', 'P2', 'P1', 'P2', 'P2', 'P2']
+        
 
-    partido(secuencia_puntos1)
-    partido(secuencia_puntos2)
+
+        
 
     
+
+

@@ -25,7 +25,6 @@ def generar_password(longitud, mayuscula = True, minuscula = True, numeros = Tru
         if simbolos:
             caracteres += string.punctuation
 
-    #print(caracteres)
     
     password = ""
     for i in range(longitud):

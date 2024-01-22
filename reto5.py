@@ -10,7 +10,7 @@
  */"""
 
 # Vamos a definir para cada elemento una funcion donde se pasará por parámetro el elemento escogido por el player 2
-# de tal manera que devuelva quien ha ganado esa jugada.
+# de tal manera que devuelva quien ha ganado esa jugada (True = Player 1, False = Player 2).
 
 def is_piedra(elemento):
     if elemento == "lagarto" or elemento == "tijeras":
@@ -58,7 +58,7 @@ if __name__ == "__main__":
                 p1 += 1
             else:
                 p2 += 1
-        if jugada[0] == "tijera":
+        if jugada[0] == "tijeras":
             if is_tijera(jugada[1]) == True:
                 p1 += 1
             else:
